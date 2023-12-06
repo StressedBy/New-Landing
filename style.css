@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
+
+@import url('https://fonts.cdnfonts.com/css/lemon-milk');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-white: #DAD6D6;
+    --color-dgrey: #171614;
+    --color-black: #0B0A09;
+    --color-purple: #7939FF;
+    --color-red: #DA0303;
+}
+
+header{
+    background: var(--color-black);
+    width: 100vw;
+    height: 10vh;
+    box-shadow: 0 0.01vh 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    font-family: "LEMON MILK", sans-serif;
+}
+
+.logo a{
+    margin-left: 5vw;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 0.125rem 0.4rem;
+    background: var(--color-red);
+    color: var(--color-white);
+    width: 3.5rem;
+    height: 3rem;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.logo a:hover{
+    background: var(--color-white);
+    color: var(--color-red);
+}
+
+.logo h1{
+    margin-left: 2.5vw;
+    font-weight: 300;
+    color: var(--color-white);
+    width: 100%;
+    height: 5vh;
+    align-self: center;
+}
+
+.logo span{
+    font-family: "LEMON MILK", sans-serif;
+    font-weight: 700;
+    color: var(--color-red);
+}
+
+body{
+    background: var(--color-dgrey);
+}
