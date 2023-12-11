@@ -7,7 +7,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 :root{
     --color-white: #DAD6D6;
     --color-dgrey: #171614;
@@ -15,59 +14,238 @@
     --color-purple: #7939FF;
     --color-red: #DA0303;
 }
-
 header{
     background: var(--color-black);
     width: 100vw;
     height: 10vh;
     box-shadow: 0 0.01vh 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 0px 1.5rem;
 }
-
-.logo{
+.menu{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     height: 100%;
-    justify-content: center;
-    font-family: "LEMON MILK", sans-serif;
+    width: 100%;
 }
-
+.logo{
+    font-family: "LEMON MILK", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+}
 .logo a{
-    margin-left: 5vw;
+    letter-spacing: 1px;
     text-decoration: none;
     font-weight: 500;
     font-size: 2rem;
     padding: 0.125rem 0.4rem;
     background: var(--color-red);
     color: var(--color-white);
-    width: 3.5rem;
-    height: 3rem;
-    align-self: center;
-    align-content: center;
-    justify-content: center;
     border-radius: 3px;
     transition: 0.2s;
 }
-
 .logo a:hover{
     background: var(--color-white);
     color: var(--color-red);
 }
-
 .logo h1{
     margin-left: 2.5vw;
     font-weight: 300;
     color: var(--color-white);
-    width: 100%;
-    height: 5vh;
-    align-self: center;
 }
-
 .logo span{
     font-family: "LEMON MILK", sans-serif;
     font-weight: 700;
     color: var(--color-red);
 }
-
+.menu_content{
+    color: var(--color-white);
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    align-items: center;
+}
+.menu_content li{
+    list-style: none;
+    margin-left: 3vw;
+    font-size: 1.2rem;
+}
+.menu_content a{
+    text-decoration: none;
+    color: var(--color-white);
+    transition: 0.3s;
+}
+.menu_content a:hover{
+    color: var(--color-red);
+}
+#about_us{
+    border: 1px solid var(--color-red);
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+}
+#about_us:hover{
+    border: 1px solid var(--color-white);
+}
 body{
     background: var(--color-dgrey);
+    font-family: 'Poppins', sans-serif;
 }
+.container{
+    width: 100vw;
+    height: 100%;
+    padding: 0 10rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container h1{
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 2rem;
+}
+.container h2{
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 1.45rem;
+}
+
+.title_des h1{
+    margin-bottom: 1rem;
+}
+.video_frame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 65vw;
+    height: 75vh;
+    background: var(--color-black);
+    border-radius: 5px;
+    padding: 1rem;
+}
+.video_frame iframe{
+    margin-top: 1rem;
+    max-width: 100%;
+    width: 80%;
+    height: 84%;
+    color: var(--color-dgrey);
+    border-radius: 10px;
+}
+
+.call_to_action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 75%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.call_to_action h3{
+    font-size: 1rem;
+    max-width: 50%;
+}
+
+.call_to_action button{
+    background: var(--color-red);
+    color: var(--color-white);
+    width: 15rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.benefits{
+    display: flex;
+    flex-direction: column;
+    max-width: 26vw;
+}
+.benefit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+    border-radius: 10px;
+    background: var(--color-white);
+    margin-top: 2rem;
+}
+.benefit i {
+    font-size: 3rem;
+    color: var(--color-dgrey);
+}
+.benefit h3 {
+    font-weight: 500;
+    padding: 1rem;
+    color: var(--color-black);
+    font-size: 1rem;
+}
+
+.courses_and_benefits{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-white);
+}
+
+.courses{
+    width: 42vw;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.courses h2, h3{
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+.courses h2{
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.courses i{
+    font-size: 6vh;
+    margin-bottom: 1rem;
+    color: var(--color-red);
+}
+
+.full_stack{
+    min-height: 50%;
+    max-width: 20vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-black);
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    left: 0;
+    top: 50px;
+    z-index: 1;
+}
+
+.data_science{
+    min-height: 50%;
+    max-width: 20vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-black);
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    left: 50%;
+    bottom: 50px;
+}
+
