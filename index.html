@@ -10,7 +10,6 @@
     
 
 </head>
-<body>
 
     <header> 
             <div class="menu">
@@ -20,17 +19,17 @@
                 </div>
                     <nav>
                         <div class="menu_content">
-                            <li><a href="">Sobre nós</a></li>
+                            <li><a href="https://infinityschool.com.br/a-escola/" target="_blank">Sobre nós</a></li>
                             <li><a href="#division_line">Cursos</a></li>
-                            <li id="about_us"><a href="">Entre em contato</a></li>
+                            <li id="about_us"><a href="https://wa.me/71992040134" target="_blank">Entre em contato</a></li>
                         </div>
                         <div class="toggle_menu">
                             <i onclick=show_sidebar() class="fa-solid fa-bars menu_btn"></i>
                             <ul class="sidebar">
                                 <li><i onclick=hide_sidebar() class="fa-regular fa-circle-xmark cls_btn"></i></li>
-                                <li><a href="">Sobre nós</a></li>
-                                <li><a href="">Cursos</a></li>
-                                <li><a href="">Entre em contato</a></li>
+                                <li><a href="https://infinityschool.com.br/a-escola/" target="_blank">Sobre nós</a></li>
+                                <li><a href="#division_line">Cursos</a></li>
+                                <li><a href="https://wa.me/71992040134" target="_blank">Entre em contato</a></li>
                             </ul>    
                         </div>
                     </nav>
@@ -53,6 +52,7 @@
 
             </div>
             <div class="register_popup" id="popup">
+                <i onclick = hide_popup() class="fa-regular fa-circle-xmark"></i>
                 <form action="" class="popup_form">
                     <label for="name">Nome:</label>
                     <input type="text" id="name" placeholder="Nome e Sobrenome" required>
@@ -71,12 +71,55 @@
         <section class="container"> <!-- Slider -->
             <h2>CONHEÇA <span>NOSSO ESPAÇO!</span></h2>
             <div class="image_slider">
-
+                <div class="wrapper">
+                    <div class="image_container">
+                        <input type="radio" name="slide" id="c1" checked>
+                        <label for="c1" class="card">
+                            <div class="row">
+                                <div class="icon">1</div>
+                                <div class="img_description">
+                                    <h3>LOREM</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="radio" name="slide" id="c2" checked>
+                        <label for="c2" class="card">
+                            <div class="row">
+                                <div class="icon">2</div>
+                                <div class="img_description">
+                                    <h3>IPSUM</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="radio" name="slide" id="c3" checked>
+                        <label for="c3" class="card">
+                            <div class="row">
+                                <div class="icon">3</div>
+                                <div class="img_description">
+                                    <h3>LOREM</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="radio" name="slide" id="c4" checked>
+                        <label for="c4" class="card">
+                            <div class="row">
+                                <div class="icon">4</div>
+                                <div class="img_description">
+                                    <h3>IPSUM</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="container" id="division_line"> <!-- Cursos e benefícios -->
-            <h2>AQUI NA INFINITY <span>APRENDA PYTHON, JAVASCRIPT, HTML, CSS, BANCO DE DADOS MYSQL, REACT</span> E <span class="red">MUITO MAIS!</span></h2>
+            <h2>AQUI NA INFINITY <span>APRENDA PYTHON, JAVASCRIPT, HTML, CSS, BANCO DE DADOS MYSQL, REACT</span> E <span class="purple">MUITO MAIS!</span></h2>
             <div class="courses_and_benefits" >
                 <div class="courses">
                     <div class="full_stack">
@@ -114,8 +157,6 @@
                 </div>
             </div>
         </section>
-
-
 
         <section class="container">
             <h2 class="salary_title"><span>FORMAMOS</span> HOJE <span class="purple">AS CARREIRAS MAIS PROMISSORAS DO SÉCULO</span> XXI.</h2>
@@ -208,5 +249,4 @@
     
 
     <script src="main.js"></script>
-</body>
 </html>

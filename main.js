@@ -7,7 +7,12 @@ function hide_sidebar(){
     sidebar.style.display= 'none'
 }
 
-function show_popup(){
-    const register_popup = document.querySelector('.register_popup')
-    .register_popup.style.display = 'flex'
+function show_popup() {
+    const register_popup = document.querySelector('.register_popup');
+    register_popup.style.display = 'flex';
+}
+
+function hide_popup(){
+    const register_popup = document.querySelector('.register_popup');
+    register_popup.style.display = 'none'
 }
