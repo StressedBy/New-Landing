@@ -357,9 +357,14 @@ span{
     justify-content: center;
 }
 
+.bottom_line{
+    width: 100%;
+    border-bottom: 1px solid var(--color-white);
+}
+
 .image_slider{
     margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.5rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -523,9 +528,9 @@ span{
     color: var(--color-purple);
 }
 
-.full_stack{
+.first_box{
     min-height: 50%;
-    max-width: 19vw;
+    max-width: 20vw;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -541,9 +546,9 @@ span{
     border: 1px solid var(--color-white);
 }
 
-.data_science{
+.second_box{
     min-height: 50%;
-    max-width: 19vw;
+    max-width: 20vw;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -582,7 +587,7 @@ span{
 
 .low_bar{
     background: var(--color-black);
-    width: 65vw;
+    width: 85vw;
     height: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -607,7 +612,7 @@ span{
 
 .medium_bar{
     background: var(--color-black);
-    width: 65vw;
+    width: 85vw;
     height: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -619,7 +624,7 @@ span{
     background: var(--color-white);
     height: 100%;
     width: 50%;
-    min-width: 10rem;
+    min-width: 12rem;
     border-radius: 25px;
     padding: 5px;
 }
@@ -632,7 +637,7 @@ span{
 
 .high_bar{
     background: var(--color-black);
-    width: 65vw;
+    width: 85vw;
     height: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -644,7 +649,7 @@ span{
     background: var(--color-white);
     height: 100%;
     width: 75%;
-    min-width: 11rem;
+    min-width: 14rem;
     border-radius: 25px;
     padding: 5px;
 }
@@ -856,15 +861,17 @@ footer h1{
         width: 100%;
     }
     
-    .full_stack{
-        max-width: 95%;
+    .first_box{
+        width: 95%;
+        min-width: 95%;
         top: 0;
         left: none;
         margin-bottom: 1.5rem;
     }
 
-    .data_science{
-        max-width: 95%;
+    .second_box{
+        width: 95%;
+        min-width: 95%;
         bottom: none;
         left: 0;
     }
