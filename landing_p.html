@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/landing_style.css">
+        <link rel="icon" type="image/png" href="./static/favicon-16x16.png" sizes="16x16" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Infinity School - Visual Art Creative Center</title>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-52ZJXG5');</script>
+        <!-- End Google Tag Manager -->
+
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZJXG5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+        <header>
+            <div class="menu">
+                <div class="logo">
+                    <a
+                        href="https://infinityschool.com.br/?gad_source=1&gclid=CjwKCAiA1MCrBhAoEiwAC2d64eEn1BUhhL5olVcqRW3pkW_2ilBEuBmETHIzEWvx97qpbB9xsc1zqhoCjNsQAvD_BwE">IN</a>
+                    <h1>INFINITY <span>SCHOOL</span></h1>
+                </div>
+                <nav>
+                    <div class="menu_content">
+                        <li><a href="https://infinityschool.com.br/a-escola/"
+                                target="_blank">Sobre nós</a></li>
+                        <li><a href="#division_line">Cursos</a></li>
+                        <li id="about_us"><a href="https://wa.me/5508001417000"
+                                target="_blank">Entre em contato</a></li>
+                    </div>
+                    <div class="toggle_menu">
+                        <i onclick=show_sidebar()
+                            class="fa-solid fa-bars menu_btn"></i>
+                        <ul class="sidebar">
+                            <li><i onclick=hide_sidebar()
+                                    class="fa-regular fa-circle-xmark cls_btn"></i></li>
+                            <li><a href="https://infinityschool.com.br/a-escola/"
+                                    target="_blank">Sobre nós</a></li>
+                            <li><a href="#division_line">Cursos</a></li>
+                            <li><a href="https://wa.me/5508001417000"
+                                    target="_blank">Entre em contato</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="register_popup" id="popup">
+            <i onclick=hide_popup() class="fa-regular fa-circle-xmark" id="close_popup"></i>
+            <form id="popup_form" class="popup_form" action="{{ url_for('land_page3_requisicao') }}" method="post" curso="{{ dados['curso'] }}" cidade="{{ dados['cidade'] }}" onsubmit="enviar_form(event, 'popup_form')">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome e Sobrenome" oninput="limitSpecialCharacters('nome')" required>
+
+                <h6 id="erro_nome_popup">Quantidade de carácteres insuficiente. Tente por nome e sobrenome.</h6>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email"
+                    placeholder="seuEmail@exemplo.com" required>
+
+                <h6 id="erro_email_popup">Email inválido.</h6>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(DDD)912345678" maxlength="13" oninput="limitSpecialCharacters('telefone')" required>
+
+                <h6 id="erro_telefone_popup">Número de telefone inexistente.</h6>
+
+                <label for="data_agendamento">Agendamento:</label>
+                <input type="date" id="data_agendamento" name="data_agendamento">
+                <h6>Opcional</h6>
+
+                <button type="submit">ENVIAR</button>
+            </form>
+            <div id="form_enviado">
+                <p> O formulário foi enviado. A gente vai te dar um retorno em breve!</p>
+                <i class="fa-solid fa-check"></i>
+            </div>
+        </div>    
+
+        <a onClick="startWhatsAppChat()" class="whts_btn"><i
+                class="fa-brands fa-whatsapp"></i></a>
+
+        <section class="container">
+            <h1 class="title">QUER <span>APRENDER {{ dados['curso'] }}</span> EM
+                <span class="red">{{ dados['cidade'] }}</span>, MAS AINDA
+                <span>NÃO SABE ONDE</span>!?</h1>
+
+            <div class="video_frame">
+                <iframe width="560" height="315"
+                    src="{{ outros_dados[dados['curso']]['link_video'] }}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <div class="call_to_action">
+                    <h3> <span>Invista no seu futuro</span> com <span>descontos
+                            exclusivos</span>. <span>Conquiste seus
+                            objetivos</span> profissionais! <span>Inscreva-se
+                            hoje</span> e entre na revolução digital.</h3>
+                    <button onclick=show_popup()>SAIBA VALORES!</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="bottom_line"></div>
+        </section>
+
+        <section class="container_slider">
+
+            <div class="image_slider">
+                <h2>CONHEÇA <span>NOSSO ESPAÇO!</span></h2>
+                <div class="wrapper">
+                    <div class="image_container">
+                        <input type="radio" name="slide" id="c1" checked>
+                        <label for="c1" class="card">
+                            <div class="row">
+                                <div class="icon">1</div>
+                                <div class="img_description">
+                                    <h3>RANKEAMENTO</h3>
+                                    <p>Destaque-se na escola e ganhe bonificações exclusivas com nosso sistema de ranqueamento.</p>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="radio" name="slide" id="c2">
+                        <label for="c2" class="card">
+                            <div class="row">
+                                <div class="icon">2</div>
+                                <div class="img_description">
+                                    <h3>TECNOLOGIA</h3>
+                                    <p>Unindo tecnologia avançada e métodos modernos, preparamos alunos para os desafios digitais.
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="radio" name="slide" id="c3">
+                        <label for="c3" class="card">
+                            <div class="row">
+                                <div class="icon">3</div>
+                                <div class="img_description">
+                                    <h3>NETWORKING</h3>
+                                    <p>No Infinity Bar os alunos podem relaxar, compartilhar ideias e fortalecer conexões.
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="radio" name="slide" id="c4">
+                        <label for="c4" class="card">
+                            <div class="row">
+                                <div class="icon">4</div>
+                                <div class="img_description">
+                                    <h3>INOVAÇÃO</h3>
+                                    <p>Nas nossas salas a inovação encontra a educação, proporcionando um ambiente propício para o seu desenvolvimento.</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="container" id="division_line">
+
+            <h2>AQUI NA INFINITY <span>APRENDA {{ outros_dados[dados['curso']]['ementa'] }}</span> E <span
+                    class="purple">MUITO MAIS!</span></h2>
+            <div class="courses_and_benefits">
+                <div class="courses">
+                    {% for modulo in outros_dados[dados['curso']]['curso'] %}
+                    <div class="{{ modulo['css_div'] }}">
+                        <h2>{{ modulo['nome'] }}</h2>
+                        <i class="{{ modulo['css_i'] }}"></i>
+                        <h3>{{ modulo['descricao'] }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="benefits">
+                    <div class="benefit">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Um centro certificado, com metodologia americana e 100% presencial.</h3>
+
+                    </div>
+
+                    <div class="benefit">
+                        <i class="fa-solid fa-person-chalkboard"></i>
+                        <h3>Com inovações como aulas particulares gratuitas durante o curso, você terá ainda mais suporte para atingir seus objetivos.</h3>
+
+                    </div>
+
+                    <div class="benefit">
+                        <i class="fa-solid fa-trophy"></i>
+                        <h3>Possuímos um sistema de gamificação único onde o aluno poderá obter diversos prêmios apenas com os seus resultados dentro do curso!</h3>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container"> 
+            <h2 class="salary_title"><span>FORMAMOS</span> HOJE <span
+                    class="purple">AS CARREIRAS MAIS PROMISSORAS DO
+                    SÉCULO</span> XXI.</h2>
+            <div class="salary_container">
+                <div class="salary">
+                    <h3><span class="purple">Júnior</span></h3>
+                    <div class="low_bar">
+                        <div class="low_filling">
+                            <h3>R$ {{ outros_dados[dados['curso']]['salarios']['junior'] }}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salary">
+                    <h3><span class="purple">Pleno</span></h3>
+                    <div class="medium_bar">
+                        <div class="medium_filling">
+                            <h3>R$ {{ outros_dados[dados['curso']]['salarios']['pleno'] }}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salary">
+                    <h3><span class="purple">Sênior</span></h3>
+                    <div class="high_bar">
+                        <div class="high_filling">
+                            <h3>R$ {{ outros_dados[dados['curso']]['salarios']['senior'] }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <footer>
+    
+            <div id="footer_content">
+    
+                <a href="https://infinityschool.com.br" target="_blank"
+                    id="footer_logo"><h1>IN</h1></a>
+    
+                <ul class="footer_list">
+                    <li><h3><span class="orange">LOCALIZAÇÃO</span></h3></li>
+                    <a href="{{ localizacao[dados['cidade']]['endereco'] }}" target="_blank"class="footer_link">{{ localizacao[dados['cidade']]['local'] }}</a>
+                    
+                </ul>
+    
+                <ul class="footer_list">
+    
+                    <li><h3><span class="orange">CONTATO</span></h3></li>
+    
+                    <li><a href="https://wa.me/5508001417000" target="_blank" class="footer_link"></i><i class="fa-brands fa-whatsapp"></i> WHATSAPP: +55 0800 141 7000 </a></li>
+    
+                </ul>
+    
+                <div id="footer_subscribe">
+    
+                    <h3><span class="orange">FIQUE LIGADO!</span></h3>
+    
+                    <h4>Seja um dos primeiros a ser avisado sobre nossas promoções!</h4>
+    
+                    <div id="input_group">
+                        <form id="footer_input" action="{{ url_for('land_page3_requisicao') }}" method="post" curso="{{ dados['curso'] }}" cidade="{{ dados['cidade'] }}" onsubmit="enviar_form(event, 'footer_input')">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email"
+                                placeholder="seuEmail@email.com" name="email" required>
+
+                            <label for="email">Nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+    
+                            <label for="cell">Telefone:</label>
+                            <input type="tel" id="cell" name="telefone"
+                                placeholder="(DDD)912345678" required maxlength="13">
+    
+                            <button type="submit">ENVIAR</button>
+                        </form>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <div id="footer_copyright">
+                &#169
+                2023 Infinity School, all rights reserved
+            </div>
+    
+        </footer>
+    
+        <script>
+
+            function limitSpecialCharacters(fieldName) {
+                    let inputField = document.getElementById(fieldName);
+                    let inputValue = inputField.value;
+
+                    if (fieldName === 'nome') {
+                        inputField.value = inputValue.replace(/[^a-zA-Z ]/g, '');
+                    } else if (fieldName === 'telefone') {
+                        inputField.value = inputValue.replace(/[^0-9 ]/g, '');
+                    }
+                }
+
+            function show_sidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display= 'flex'
+            }
+            function hide_sidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display= 'none'
+            }
+
+            function show_popup() {
+                const register_popup = document.querySelector('.register_popup');
+                register_popup.style.display = 'flex';
+            }
+
+            function hide_popup(){
+                const register_popup = document.querySelector('.register_popup');
+                register_popup.style.display = 'none'
+            }
+
+            function isMobile() {
+            return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+
+            function startWhatsAppChat() {
+                let phoneNumber = '5508001417000';
+                let message = 'Olá, tudo certo? Estou interessado em saber mais sobre os cursos da Infinity.';
+
+                if (isMobile()) {
+                    let whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+                    window.open(whatsappLink, '_blank');
+                } else {
+                    let whatsappWebLink = 'https://web.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+                    window.open(whatsappWebLink, '_blank');
+                }
+            }
+
+            function enviar_form(event, type) {
+                event.preventDefault()
+
+                const formData = new FormData(document.getElementById(type));
+
+                const curso = document.getElementById(type).getAttribute('curso');
+                const cidade = document.getElementById(type).getAttribute('cidade');
+
+                formData.append('curso', curso);
+                formData.append('cidade', cidade);
+
+                function errTest() {
+                    resp = 0
+                    listaH6 = ["erro_nome_popup", "erro_email_popup", "erro_telefone_popup"]
+
+                        for (let item of listaH6) {
+                            item = document.getElementById(item)
+                            item.style.display = 'none'
+                        }
+
+                    nome = document.getElementById("erro_nome_popup")
+                    email = document.getElementById("erro_email_popup")
+                    telefone = document.getElementById("erro_telefone_popup")
+
+
+                    if(formData.get('nome').length < 4){
+                        nome.style.display = 'flex'
+                        resp ++
+                    }
+                    if(formData.get('email').length < 5){
+                        email.style.display = 'flex'
+                        resp ++
+                    }
+                    if(formData.get('telefone').length < 11){
+                        telefone.style.display = 'flex'
+                        resp ++
+                    }
+                    
+                    return resp
+                }
+
+                if(errTest()){
+                    return null
+                } 
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '{{ url_for("land_page3_requisicao") }}', true);
+
+                xhr.onload = function () {
+                    if (xhr.status === 200 && type == "popup_form") {
+                        document.querySelector('.popup_form').style.display = 'none';
+    
+                        document.querySelector('#form_enviado').style.display = 'flex'
+                    } 
+                };
+
+                xhr.onerror = function () {
+                    console.error('Erro de rede ao enviar o formulário');
+                };
+
+                xhr.send(formData);
+
+            }
+        </script>
+        
+    </body>
+
+</html>
